@@ -13,4 +13,11 @@ var _ = Describe("CabRides", func() {
 
 		Expect(cabRides.TotalFare()).To(Equal(100))
 	})
+	It("should calculate total fare as 110 for rides of 7km and 4km", func() {
+		cabRides := NewCabRides()
+		cabRides.Add(NewCabRide(7, 0))
+		cabRides.Add(NewCabRide(4, 0))
+
+		Expect(cabRides.TotalFare()).To(Equal(110))
+	})
 })
