@@ -1,8 +1,8 @@
 package main
 
 const (
-	FarePerKm     = 10
-	FarePerMinute = 2
+	farePerKm     = 10
+	farePerMinute = 2
 	minimumFare   = 40
 )
 
@@ -16,7 +16,7 @@ func NewCabRide(distance int, waitTime int) CabRide {
 }
 
 func (r *CabRide) Fare() int {
-	fare := r.distance*FarePerKm + r.waitTime*FarePerMinute
+	fare := r.distance*farePerKm + r.waitTime*farePerMinute
 	if fare < minimumFare {
 		return minimumFare
 	}
