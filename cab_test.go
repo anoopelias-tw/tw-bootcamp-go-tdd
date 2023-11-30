@@ -11,4 +11,9 @@ var _ = Describe("CabRide", func() {
 		fare := cabRide.Fare()
 		Expect(fare).To(Equal(50))
 	})
+	It("should calculate fare as 60 when distance is 6", func() {
+		cabRide := NewCabRide(6)
+		fare := cabRide.Fare()
+		Expect(fare).To(Equal(60))
+	})
 })

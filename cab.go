@@ -9,5 +9,5 @@ func NewCabRide(distance int) CabRide {
 }
 
 func (r *CabRide) Fare() int {
-	return 50
+	return r.distance * 10
 }

@@ -9,5 +9,6 @@ import (
 
 func TestTwBootcampGoTdd(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "TwBootcampGoTdd Suite")
+	RunSpecs(t,
+		"TwBootcampGoTdd Suite")
 }
