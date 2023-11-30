@@ -22,7 +22,7 @@ func (r *CabRides) TotalFare() int {
 	return total
 }
 
-func (r *CabRides) invoice() Invoice {
+func (r *CabRides) Invoice() Invoice {
 	return Invoice{len(r.cabRides), r.TotalFare(), float64(r.TotalFare()) / float64(len(r.cabRides))}
 }
 
