@@ -16,8 +16,8 @@ func (r *CabRides) Add(ride CabRide) {
 
 func (r *CabRides) TotalFare() int {
 	total := 0
-	for i := 0; i < len(r.cabRides); i++ {
-		total += r.cabRides[i].Fare()
+	for _, ride := range r.cabRides {
+		total += ride.Fare()
 	}
 	return total
 }
