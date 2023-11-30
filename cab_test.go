@@ -17,8 +17,11 @@ var _ = Describe("CabRide", func() {
 		Expect(fare).To(Equal(60))
 	})
 	It("should calculate fare as 6 when waiting time is 3 minutes", func() {
-		cabRide := NewCabRide(0, 3)
-		Expect(cabRide.Fare()).To(Equal(6))
+		cabRide := NewCabRide(0, 30)
+		Expect(cabRide.Fare()).To(Equal(60))
 	})
-
+	It("should calculate minimum fare as 40", func() {
+		cabRide := NewCabRide(1, 1)
+		Expect(cabRide.Fare()).To(Equal(40))
+	})
 })

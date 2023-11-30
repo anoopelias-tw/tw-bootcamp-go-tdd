@@ -15,5 +15,9 @@ func NewCabRide(distance int, waitTime int) CabRide {
 }
 
 func (r *CabRide) Fare() int {
-	return r.distance*FarePerKm + r.waitTime*FarePerMinute
+	fare := r.distance*FarePerKm + r.waitTime*FarePerMinute
+	if fare < 40 {
+		return 40
+	}
+	return fare
 }
