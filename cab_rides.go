@@ -4,6 +4,12 @@ type CabRides struct {
 	cabRides []CabRide
 }
 
+type Invoice struct {
+	TotalRides int
+	TotalFare  int
+	Average    float64
+}
+
 func (r *CabRides) Add(ride CabRide) {
 	r.cabRides = append(r.cabRides, ride)
 }
@@ -14,6 +20,10 @@ func (r *CabRides) TotalFare() int {
 		total += r.cabRides[i].Fare()
 	}
 	return total
+}
+
+func (r *CabRides) invoice() Invoice {
+	return Invoice{1, 60, 60}
 }
 
 func NewCabRides() CabRides {

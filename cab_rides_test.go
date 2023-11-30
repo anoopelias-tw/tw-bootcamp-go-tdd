@@ -20,4 +20,14 @@ var _ = Describe("CabRides", func() {
 
 		Expect(cabRides.TotalFare()).To(Equal(110))
 	})
+	It("should generate invoice for a ride", func() {
+		cabRides := NewCabRides()
+		cabRides.Add(NewCabRide(6, 0))
+
+		invoice := cabRides.invoice()
+		Expect(invoice.TotalRides).To(Equal(1))
+		Expect(invoice.TotalFare).To(Equal(60))
+		Expect(invoice.Average).To(Equal(60.0))
+
+	})
 })
