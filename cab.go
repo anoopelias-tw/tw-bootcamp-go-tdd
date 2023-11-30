@@ -3,6 +3,7 @@ package main
 const (
 	FarePerKm     = 10
 	FarePerMinute = 2
+	minimumFare   = 40
 )
 
 type CabRide struct {
@@ -16,8 +17,8 @@ func NewCabRide(distance int, waitTime int) CabRide {
 
 func (r *CabRide) Fare() int {
 	fare := r.distance*FarePerKm + r.waitTime*FarePerMinute
-	if fare < 40 {
-		return 40
+	if fare < minimumFare {
+		return minimumFare
 	}
 	return fare
 }
