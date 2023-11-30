@@ -1,5 +1,10 @@
 package main
 
+const (
+	FarePerKm     = 10
+	FarePerMinute = 2
+)
+
 type CabRide struct {
 	distance int
 	waitTime int
@@ -10,5 +15,5 @@ func NewCabRide(distance int, waitTime int) CabRide {
 }
 
 func (r *CabRide) Fare() int {
-	return r.distance*10 + r.waitTime*2
+	return r.distance*FarePerKm + r.waitTime*FarePerMinute
 }
