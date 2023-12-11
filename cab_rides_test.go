@@ -25,9 +25,7 @@ var _ = Describe("CabRides", func() {
 		cabRides.Add(NewCabRide(6, 0))
 
 		invoice := cabRides.Invoice()
-		Expect(invoice.TotalRides).To(Equal(1))
-		Expect(invoice.TotalFare).To(Equal(60))
-		Expect(invoice.Average).To(Equal(60.0))
+		Expect(invoice).To(Equal(Invoice{1, 60, 60.0}))
 	})
 	It("should generate Invoice for multiple rides", func() {
 		cabRides := NewCabRides()
@@ -35,8 +33,6 @@ var _ = Describe("CabRides", func() {
 		cabRides.Add(NewCabRide(7, 0))
 
 		invoice := cabRides.Invoice()
-		Expect(invoice.TotalRides).To(Equal(2))
-		Expect(invoice.TotalFare).To(Equal(130))
-		Expect(invoice.Average).To(Equal(65.0))
+		Expect(invoice).To(Equal(Invoice{2, 130, 65.0}))
 	})
 })

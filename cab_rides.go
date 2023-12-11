@@ -5,9 +5,9 @@ type CabRides struct {
 }
 
 type Invoice struct {
-	TotalRides int
-	TotalFare  int
-	Average    float64
+	totalRides int
+	totalFare  int
+	average    float64
 }
 
 func (r *CabRides) Add(ride CabRide) {
